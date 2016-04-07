@@ -68,8 +68,8 @@
 			children = (
 				7BAA7B831CB5AEE1003729C6 /* AppDelegate.swift */,
 				7BAA7B851CB5AEE1003729C6 /* ViewController.swift */,
-				7BAA7B871CB5AEE1003729C6 /* Main.storyboard */,
 				7BAA7B9C1CB5B887003729C6 /* MapViewController.swift */,
+				7BAA7B871CB5AEE1003729C6 /* Main.storyboard */,
 				7BAA7B8D1CB5AEE1003729C6 /* Assets.xcassets */,
 				7BAA7B8F1CB5AEE1003729C6 /* LaunchScreen.storyboard */,
 				7BAA7B921CB5AEE1003729C6 /* Info.plist */,
@@ -300,6 +300,7 @@
 				7BAA7B971CB5AEE1003729C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

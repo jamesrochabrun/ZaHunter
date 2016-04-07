@@ -18,6 +18,14 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+        
+    var searchQuery  = String()
+    
+    var location = CLLocation()
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
     //creating a location manager property
     let locationManager = CLLocationManager()
     
@@ -39,6 +47,8 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
         //4 start tracking user
         self.startLookingForUserLocation()
         
+        self.searchQuery = "Pizza"
+
 
     }
     
@@ -104,13 +114,26 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     
+    @IBAction func cc(sender: AnyObject) {
+        self.searchQuery = self.searchBar.text!
+        self.findPizzaNearLocation(location)
+        self.searchBar.resignFirstResponder()
+    }
+    
+    
+    //making a search request
+//    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+//    
+//    }
+    
+    
     //7 remember to import mapkit , this  find the place
     func findPizzaNearLocation(location: CLLocation)
     {
         
         //create a new request
         let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = "Pizza"
+        request.naturalLanguageQuery = self.searchQuery
         request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.5, 0.5))
         
         //run the search based on the request
@@ -170,6 +193,8 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCellWithIdentifier("CellId")! as UITableViewCell
@@ -194,15 +219,27 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     
 
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "mapButton" {
             
             let destVc = segue.destinationViewController as! MapViewController
             destVc.pizzaPlaces = self.pizzaPlaces
-        
-        } else{
             
+            destVc.isButtonSegue = true
+    
+        } else{
+            let cell = sender as! UITableViewCell
+            let indexPath = tableView.indexPathForCell(cell)
+            
+            let pizzaPlace = self.pizzaPlaces[indexPath!.row]
+            
+            let destVC = segue.destinationViewController as! MapViewController
+            
+            //passing the dictionary to the next VC
+            destVC.pizzaPlace = pizzaPlace
+            destVC.isButtonSegue = false
         }
     }
     

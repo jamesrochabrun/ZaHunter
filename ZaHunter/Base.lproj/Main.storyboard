@@ -19,16 +19,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lJg-Fi-t3H">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lJg-Fi-t3H">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="274" id="qch-rs-6cH">
-                                        <variation key="widthClass=compact" constant="338"/>
+                                        <variation key="widthClass=compact" constant="374"/>
                                     </constraint>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellId" textLabel="wuL-yI-WaV" detailTextLabel="C6p-ag-9yO" style="IBUITableViewCellStyleValue1" id="1KD-If-07O">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellId" textLabel="wuL-yI-WaV" detailTextLabel="C6p-ag-9yO" rowHeight="85" style="IBUITableViewCellStyleValue1" id="1KD-If-07O">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1KD-If-07O" id="X3y-XX-PtI">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
@@ -56,6 +56,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="NwL-kC-V2B" kind="show" identifier="cellSegue" id="U0g-fc-eqo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="default">
@@ -77,7 +80,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="223" id="SoM-L1-nkq"/>
+                                    <constraint firstAttribute="height" constant="223" id="SoM-L1-nkq">
+                                        <variation key="widthClass=compact" constant="185"/>
+                                    </constraint>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -111,6 +116,13 @@
                                     </mask>
                                 </variation>
                             </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="RzH-kQ-7fV">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="44"/>
+                                </variation>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -122,7 +134,9 @@
                             <constraint firstItem="vXz-pc-loD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="d09-c7-5Aw"/>
                             <constraint firstItem="lJg-Fi-t3H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="eyj-3Y-XsR"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vXz-pc-loD" secondAttribute="bottom" id="o2z-ak-vsB"/>
-                            <constraint firstItem="Tec-T0-oUv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="272" id="oar-Qc-B6q"/>
+                            <constraint firstItem="Tec-T0-oUv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="272" id="oar-Qc-B6q">
+                                <variation key="widthClass=compact" constant="310"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="Tec-T0-oUv" secondAttribute="trailing" constant="-20" id="v5J-zW-Rii"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vXz-pc-loD" secondAttribute="trailing" constant="-20" id="wWA-Cl-VOC"/>
                         </constraints>
@@ -131,6 +145,7 @@
                                 <exclude reference="lJg-Fi-t3H"/>
                                 <exclude reference="Tec-T0-oUv"/>
                                 <exclude reference="vXz-pc-loD"/>
+                                <exclude reference="RzH-kQ-7fV"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="o2z-ak-vsB"/>
@@ -149,6 +164,7 @@
                                 <include reference="lJg-Fi-t3H"/>
                                 <include reference="Tec-T0-oUv"/>
                                 <include reference="vXz-pc-loD"/>
+                                <include reference="RzH-kQ-7fV"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="o2z-ak-vsB"/>
@@ -165,6 +181,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="XHF-KN-UYP">
                         <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="fxp-mz-PFH">
+                            <connections>
+                                <action selector="cc:" destination="BYZ-38-t0r" id="pj8-Gr-39C"/>
+                            </connections>
+                        </barButtonItem>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="7J1-xL-ZhF">
                             <rect key="frame" x="240" y="8" width="121" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -180,14 +201,24 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="searchBar" destination="RzH-kQ-7fV" id="s3d-Vv-Cws"/>
+                        <outlet property="searchDisplayController" destination="gZa-hg-j3H" id="gGv-9q-VEP"/>
                         <outlet property="segmentedControl" destination="7J1-xL-ZhF" id="8aQ-Tg-Bxf"/>
                         <outlet property="tableView" destination="lJg-Fi-t3H" id="sUH-xP-6Hm"/>
                         <outlet property="textView" destination="Tec-T0-oUv" id="Hzb-vk-CLI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="gZa-hg-j3H">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="lJY-i2-G5O"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="xNv-4I-gWO"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="zsQ-j5-m7L"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="qNz-8l-ZlP"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1374" y="429"/>
+            <point key="canvasLocation" x="1368" y="429"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="rhe-eg-ILn">
@@ -203,9 +234,6 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P8r-JL-0hq">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
-                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="NwL-kC-V2B" id="zcI-N8-5C3"/>
                                 </connections>
@@ -226,17 +254,33 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="sGp-n8-TLT" secondAttribute="trailing" constant="-20" id="274-Io-ppG"/>
+                            <constraint firstItem="P8r-JL-0hq" firstAttribute="leading" secondItem="DGs-wC-DGE" secondAttribute="leadingMargin" constant="-20" id="FW3-vm-IKb"/>
+                            <constraint firstItem="ylo-Cz-p1F" firstAttribute="top" secondItem="P8r-JL-0hq" secondAttribute="bottom" id="FqN-Xl-5ht"/>
                             <constraint firstItem="sGp-n8-TLT" firstAttribute="top" secondItem="DGs-wC-DGE" secondAttribute="topMargin" id="RdC-Zh-aUS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P8r-JL-0hq" secondAttribute="trailing" constant="-20" id="jro-A9-q6A"/>
+                            <constraint firstItem="P8r-JL-0hq" firstAttribute="top" secondItem="DGs-wC-DGE" secondAttribute="topMargin" id="kHl-0X-axe"/>
                             <constraint firstItem="sGp-n8-TLT" firstAttribute="leading" secondItem="DGs-wC-DGE" secondAttribute="leadingMargin" constant="-20" id="uW2-Eb-rJZ"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="P8r-JL-0hq"/>
                             </mask>
+                            <mask key="constraints">
+                                <exclude reference="FW3-vm-IKb"/>
+                                <exclude reference="jro-A9-q6A"/>
+                                <exclude reference="kHl-0X-axe"/>
+                                <exclude reference="FqN-Xl-5ht"/>
+                            </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="P8r-JL-0hq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="FW3-vm-IKb"/>
+                                <include reference="jro-A9-q6A"/>
+                                <include reference="kHl-0X-axe"/>
+                                <include reference="FqN-Xl-5ht"/>
                             </mask>
                         </variation>
                     </view>
@@ -267,4 +311,7 @@
             <point key="canvasLocation" x="595" y="-263"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="U0g-fc-eqo"/>
+    </inferredMetricsTieBreakers>
 </document>
