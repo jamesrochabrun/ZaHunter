@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -30,9 +31,11 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellId" textLabel="wuL-yI-WaV" detailTextLabel="C6p-ag-9yO" style="IBUITableViewCellStyleValue1" id="1KD-If-07O">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1KD-If-07O" id="X3y-XX-PtI">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wuL-yI-WaV">
+                                                    <rect key="frame" x="15" y="11" width="34" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -42,6 +45,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C6p-ag-9yO">
+                                                    <rect key="frame" x="181" y="11" width="44" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -129,15 +133,15 @@
                                 <exclude reference="vXz-pc-loD"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Rru-yz-qcQ"/>
-                                <exclude reference="bXU-k0-Wch"/>
-                                <exclude reference="eyj-3Y-XsR"/>
+                                <exclude reference="o2z-ak-vsB"/>
+                                <exclude reference="d09-c7-5Aw"/>
+                                <exclude reference="wWA-Cl-VOC"/>
                                 <exclude reference="Jlo-18-c6l"/>
                                 <exclude reference="oar-Qc-B6q"/>
                                 <exclude reference="v5J-zW-Rii"/>
-                                <exclude reference="d09-c7-5Aw"/>
-                                <exclude reference="wWA-Cl-VOC"/>
-                                <exclude reference="o2z-ak-vsB"/>
+                                <exclude reference="Rru-yz-qcQ"/>
+                                <exclude reference="bXU-k0-Wch"/>
+                                <exclude reference="eyj-3Y-XsR"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -147,22 +151,22 @@
                                 <include reference="vXz-pc-loD"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Rru-yz-qcQ"/>
-                                <include reference="bXU-k0-Wch"/>
-                                <include reference="eyj-3Y-XsR"/>
+                                <include reference="o2z-ak-vsB"/>
+                                <include reference="d09-c7-5Aw"/>
+                                <include reference="wWA-Cl-VOC"/>
                                 <include reference="Jlo-18-c6l"/>
                                 <include reference="oar-Qc-B6q"/>
                                 <include reference="v5J-zW-Rii"/>
-                                <include reference="d09-c7-5Aw"/>
-                                <include reference="wWA-Cl-VOC"/>
-                                <include reference="o2z-ak-vsB"/>
+                                <include reference="Rru-yz-qcQ"/>
+                                <include reference="bXU-k0-Wch"/>
+                                <include reference="eyj-3Y-XsR"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="XHF-KN-UYP">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="7J1-xL-ZhF">
-                            <rect key="frame" x="-60" y="-14" width="121" height="29"/>
+                            <rect key="frame" x="240" y="8" width="121" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
                                 <segment title="🏃🏻"/>
@@ -171,7 +175,7 @@
                         </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" title="Map" id="mMW-j2-aDC">
                             <connections>
-                                <segue destination="NwL-kC-V2B" kind="presentation" id="PO7-zg-jLN"/>
+                                <segue destination="NwL-kC-V2B" kind="presentation" identifier="mapButton" id="PO7-zg-jLN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -194,6 +198,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ylo-Cz-p1F"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DGs-wC-DGE">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="P8r-JL-0hq">
@@ -205,8 +210,25 @@
                                     <outlet property="delegate" destination="NwL-kC-V2B" id="zcI-N8-5C3"/>
                                 </connections>
                             </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sGp-n8-TLT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="jh5-Vn-RKx">
+                                        <barButtonItem key="rightBarButtonItem" title="Dismiss" id="rnc-az-M3z">
+                                            <connections>
+                                                <action selector="dismissButton:" destination="NwL-kC-V2B" id="xGE-ZL-5tR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="sGp-n8-TLT" secondAttribute="trailing" constant="-20" id="274-Io-ppG"/>
+                            <constraint firstItem="sGp-n8-TLT" firstAttribute="top" secondItem="DGs-wC-DGE" secondAttribute="topMargin" id="RdC-Zh-aUS"/>
+                            <constraint firstItem="sGp-n8-TLT" firstAttribute="leading" secondItem="DGs-wC-DGE" secondAttribute="leadingMargin" constant="-20" id="uW2-Eb-rJZ"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="P8r-JL-0hq"/>
@@ -218,6 +240,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="P8r-JL-0hq" id="eoL-fe-Vyn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="unx-Wp-iSy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

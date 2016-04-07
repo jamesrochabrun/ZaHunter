@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     //creating a location manager property
     let locationManager = CLLocationManager()
     
-    let pizzaPlaces = NSMutableArray()
+    var pizzaPlaces = [MKMapItem]()
     let pizzaDistances = NSMutableArray()
 
     
@@ -74,7 +74,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             self.reverseGeoCode(location!)
             
             //stops tracking the location
-            locationManager.stopUpdatingLocation()
+            self.locationManager.stopUpdatingLocation()
             
         }
         
@@ -124,14 +124,11 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             
             for item in response!.mapItems
             {
-                self.pizzaPlaces.addObject(item.name!)
+                self.pizzaPlaces.append(item)
                 
-                //getting the distance fromm the u
+                //getting the distance from the user and adding it 
                 self.pizzaDistances.addObject((item.placemark.location?.distanceFromLocation(location))!)
             }
-            
-            
-            
             
             
             print(self.pizzaPlaces)
@@ -173,8 +170,6 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     }
     
     
-    //
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCellWithIdentifier("CellId")! as UITableViewCell
@@ -185,7 +180,7 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
             let pizzaDistance = self.pizzaDistances[indexPath.row]
 
             
-            cell.textLabel?.text = pizzaPlace as? String
+            cell.textLabel?.text = pizzaPlace.name
             cell.detailTextLabel!.text = "\(pizzaDistance)"
         }
         
@@ -199,6 +194,36 @@ class ViewController: UIViewController, UITableViewDataSource,UITableViewDelegat
     
     
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "mapButton" {
+            
+            let destVc = segue.destinationViewController as! MapViewController
+            destVc.pizzaPlaces = self.pizzaPlaces
+        
+        } else{
+            
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
 
